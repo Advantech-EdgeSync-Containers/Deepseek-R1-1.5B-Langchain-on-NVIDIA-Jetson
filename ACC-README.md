@@ -39,7 +39,7 @@ Customizable model parameters via the model file and environment variables
 
 ## Container Demo
 
-![Demo](..%2Fdata%2Fgifs%2Flangchain-deepseek.gif)
+![Demo](data/gifs/langchain-deepseek.gif)
 
 ## Use Cases
 
