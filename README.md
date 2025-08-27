@@ -39,6 +39,10 @@ Deepseek-R1-1.5B-Langchain-on-NVIDIA-Jetson/
 ├── efficient-prompting-for-compact-models.md # Craft better prompts for small and quantized language models
 ├── customization-readme.md                   # Customization, optimization & configuration guide
 ├── .gitignore                                # Git ignore specific files
+├── data/                                     # Assets and supporting files
+│   ├── architectures/                        #  system architectures
+│   ├── gifs/                                 # Animated GIFs for demos
+│   └── images/                               # Static images, figures, and screenshots
 └── langchain-service/                        # Core LangChain API service
     ├── app.py                                # Main LangChain-FastAPI app
     ├── llm_loader.py                         # LLM loader (Ollama, DeepSeek, etc.)
@@ -46,6 +50,7 @@ Deepseek-R1-1.5B-Langchain-on-NVIDIA-Jetson/
     ├── schema.py                             # Request schema helper
     ├── utils.py                              # Utility functions helper
     └── start_services.sh                     # Startup script
+
 ```
 
 ## Container Description
