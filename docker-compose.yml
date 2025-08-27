@@ -14,10 +14,10 @@ version: '2.4'
 #   enabled for Jetson platforms.
 #
 #   The stack includes:
-#     - **LangChain Service**: Provides the Deepseek-R1-1.5B inference pipeline
+#     - LangChain Service: Provides the Deepseek-R1-1.5B inference pipeline
 #       with full CUDA, Tensor, and NVIDIA Jetson multimedia API integration for
 #       optimized AI workload execution at the edge.
-#     - **OpenWebUI Service**: Offers a browser-based interface for interacting
+#     - OpenWebUI Service: Offers a browser-based interface for interacting
 #       with the LangChain backend, visualizing results, managing prompts, and
 #       testing RAG pipelines in real time.
 #
