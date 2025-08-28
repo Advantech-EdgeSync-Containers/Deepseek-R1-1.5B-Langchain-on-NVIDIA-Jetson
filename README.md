@@ -23,7 +23,7 @@ Deepseek-R1 1.5B Langchain on NVIDIA Jetson™ Image delivers a modular, high-pe
 | Offline Capability | Fully offline after container image setup; no internet required |
 
 ## Architecture
-![langchain-deepseek.png](data/architectures/langchain-deepseek.png)
+![langchain-deepseek.png](data%2Farchitectures%2Flangchain-deepseek.png)
 
 ## Repository Structure
 ```
@@ -39,10 +39,7 @@ Deepseek-R1-1.5B-Langchain-on-NVIDIA-Jetson/
 ├── efficient-prompting-for-compact-models.md # Craft better prompts for small and quantized language models
 ├── customization-readme.md                   # Customization, optimization & configuration guide
 ├── .gitignore                                # Git ignore specific files
-├── data/                                     # Assets and supporting files
-│   ├── architectures/                        #  system architectures
-│   ├── gifs/                                 # Animated GIFs for demos
-│   └── images/                               # Static images, figures, and screenshots
+├── data                                      # Contains subfolders for assets like images, gifs etc.
 └── langchain-service/                        # Core LangChain API service
     ├── app.py                                # Main LangChain-FastAPI app
     ├── llm_loader.py                         # LLM loader (Ollama, DeepSeek, etc.)
@@ -50,7 +47,6 @@ Deepseek-R1-1.5B-Langchain-on-NVIDIA-Jetson/
     ├── schema.py                             # Request schema helper
     ├── utils.py                              # Utility functions helper
     └── start_services.sh                     # Startup script
-
 ```
 
 ## Container Description
@@ -191,7 +187,7 @@ Allow some time for the OpenWebUI and Deepseek-R1 1.5B Langchain on NVIDIA Jetso
 # Verify AI Accelerator and Software Stack Inside Docker Container
 /workspace/wise-bench.sh
 ```
-![langchain-wise-bench.png](data/images/langchain-wise-bench.png)
+![langchain-wise-bench.png](data%2Fimages%2Flangchain-wise-bench.png)
 
 Wise-bench logs are saved in `wise-bench.log` file under `/workspace`
 
@@ -210,11 +206,11 @@ http://localhost_or_Jetson_IP:3000
 ### Select Model
 In case Ollama has multiple models available, choose from the list of models on the top-left of OpenWebUI after signing up/logging in successfully. As shown below. Select DeepSeek R1 1.5B:
 
-![Select Model](data/images/select-model.png)
+![Select Model](data%2Fimages%2Fselect-model.png)
 
 ### Quick Demonstration:
 
-![Demo](data/gifs/langchain-deepseek.gif)
+![Demo](data%2Fgifs%2Flangchain-deepseek.gif)
 
 ## Prompt Guidelines
 
@@ -325,7 +321,7 @@ Response:
 ```
 Sample Screenshot:
 
-![ollama-curl.png](data/images/ollama-curl.png)
+![ollama-curl.png](data%2Fimages%2Follama-curl.png)
 
 For further API details, please refer to the official documentation of Ollama as mentioned on top.
 
@@ -336,7 +332,7 @@ http://localhost_or_Jetson_IP:8000/docs
 ```
 Sample Screenshot:
 
-![fast-api.png](data/images/fast-api.png)
+![fast-api.png](data%2Fimages%2Ffast-api.png)
 
 Inference Request:
 ```
@@ -403,7 +399,7 @@ Please note that the inference response will be in streaming mode only in the ca
 
 Sample Screenshot:
 
-![fast-api-curl.png](data/images/fast-api-curl.png)
+![fast-api-curl.png](data%2Fimages%2Ffast-api-curl.png)
 
 The same requests can also be made from Fast-API swagger docs.
 
