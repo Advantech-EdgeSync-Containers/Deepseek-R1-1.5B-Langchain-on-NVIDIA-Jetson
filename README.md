@@ -185,7 +185,8 @@ Allow some time for the OpenWebUI and Deepseek-R1 1.5B Langchain on NVIDIA Jetso
 ### AI Accelerator and Software Stack Verification (Optional)
 ```
 # Verify AI Accelerator and Software Stack Inside Docker Container
-/workspace/wise-bench.sh
+chmod +x /workspace/wise-bench.sh
+./workspace/wise-bench.sh
 ```
 ![langchain-wise-bench.png](data%2Fimages%2Flangchain-wise-bench.png)
 
