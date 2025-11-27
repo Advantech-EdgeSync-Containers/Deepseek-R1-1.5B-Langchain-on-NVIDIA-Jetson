@@ -188,6 +188,7 @@ Allow some time for the OpenWebUI and Deepseek-R1 1.5B Langchain on NVIDIA Jetso
 # Under /workspace, run this command
 # Provide executable rights
 chmod +x /wise-bench.sh
+
 # To run Wise-bench
 ./wise-bench.sh
 ```
