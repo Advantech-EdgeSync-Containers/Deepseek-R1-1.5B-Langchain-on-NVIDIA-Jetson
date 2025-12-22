@@ -3,9 +3,23 @@
 **Version:** 2.0
 **Release Date:** November 2025
 **Copyright:** © 2025 Advantech Corporation. All rights reserved.
+>  Check our [Troubleshooting Wiki](https://github.com/Advantech-EdgeSync-Containers/GPU-Passthrough-on-NVIDIA-Jetson/wiki/Advantech-Containers'-Troubleshooting-Guide) for common issues and solutions.
 
 ## Overview
 Deepseek-R1 1.5B Langchain on NVIDIA Jetson™ Image delivers a modular, high-performance AI chat solution tailored for Jetson™ edge devices. It combines Ollama with the DeepSeek R1 1.5B model for LLM inference, a FastAPI-based Langchain middleware for orchestration and tool integration, and OpenWebUI for an intuitive user interface. The container supports Retrieval-Augmented Generation (RAG), tool-augmented reasoning, conversational memory, and custom LLM workflows, making it ideal for building intelligent, context-aware agents. It is fully optimized for hardware acceleration on Jetson™ platforms & provides a development environment to build RAGs and AI agent use cases.
+
+## Host System Requirements
+
+| Component | Version/Requirement |
+|-----------|---------|
+| **JetPack** | 6.x |
+| **CUDA** | 12.6.68 |
+| **cuDNN** | 9.3.0.75 |
+| **TensorRT** | 10.3.0.30 |
+| **OpenCV** | 4.8.0 |
+* CUDA , CuDNN , TensorRT , OpenCV versions Depends on JetPack version 6.x
+* Please refer to the [NVIDIA JetPack Documentation](https://developer.nvidia.com/embedded/jetpack) for more details on compatible versions.
+
 
 ## Key Features
 
@@ -94,7 +108,7 @@ OpenWebUI serves as a clean and responsive frontend interface for interacting wi
 
 | Module                       | Link                                                  | Description                                                                |
 |------------------------------|-------------------------------------------------------|----------------------------------------------------------------------------|
-| Quick Start                  | [README](./README.md)                                 | Overview of the container image                                            |
+|  Start                  | [README](./README.md)                                 | Overview of the container image                                            |
 | Customization & optimization | [README](./customization-readme.md)                   | Steps to customize a model, configure environment, and optimize            |
 | Model Performances           | [README](./llm-models-performance-notes-readme.md)    | Performance stats of various LLM Models                                    |
 | Other AI Capabilities        | [README](./other-AI-capabilities-readme.md)           | Other AI capabilities supported by the container                           |
@@ -129,14 +143,18 @@ This image uses DeepSeek R1-1.5B for inferencing; here are the details about the
 
 The following software components are available in the base image:
 
-| Component | Version   | Description                        |
-|-----------|-----------|------------------------------------|
-| CUDA®     | 12.6.68   | GPU computing platform             |
-| cuDNN     | 9.3.0.75  | Deep Neural Network library        |
-| TensorRT™ | 10.3.0.30 | Inference optimizer and runtime    |
-| VPI       | 3.2.4     | Vision Programming Interface       |
-| Vulkan    | 1.3.204   | Graphics and compute API           |
-| OpenCV    | 4.8.0     | Computer vision library with CUDA® |
+| Component    | Version        | Description                        |
+|--------------|----------------|------------------------------------|
+| CUDA®        | 12.6.68        | GPU computing platform             |
+| cuDNN        | 9.3.0.75       | Deep Neural Network library        |
+| TensorRT™    | 10.3.0.30      | Inference optimizer and runtime    |
+| PyTorch      | 2.0.0+nv23.02  | Deep learning framework            |
+| TensorFlow   | 2.12.0         | Machine learning framework         |
+| ONNX Runtime | 1.16.3         | Cross-platform inference engine    |
+| VPI          | 3.2.4          | Vision Programming Interface       |
+| Vulkan       | 1.3.204        | Graphics and compute API           |
+| OpenCV       | 4.8.0          | Computer vision library with CUDA® |
+| GStreamer    | 1.16.2         | Multimedia framework               |
 
 
 The following software components/packages are provided further inside the container image:
@@ -149,6 +167,14 @@ The following software components/packages are provided further inside the conta
 | OpenWebUI        | 0.6.5       | Provided via separate OpenWebUI container for UI                        |
 | DeepSeek R1 1.5B | N/A         | Pulled inside the container and persisted via docker volume             |
 | FAISS            | 1.8.0.post1 | Vector store backend for enabling RAG with efficient similarity search  |
+
+
+## Before You Start
+- Ensure the following components are installed on your host system:
+  - **Docker** (v28.1.1 or compatible)
+  - **Docker Compose** (v2.39.1 or compatible)
+  - **NVIDIA Container Toolkit** (v1.11.0 or compatible)
+  - **NVIDIA Runtime** configured in Docker
 
 ## Quick Start
 
@@ -183,8 +209,12 @@ Allow some time for the OpenWebUI and Deepseek-R1 1.5B Langchain on NVIDIA Jetso
 ### AI Accelerator and Software Stack Verification (Optional)
 ```
 # Verify AI Accelerator and Software Stack Inside Docker Container
-chmod +x /workspace/wise-bench.sh
-./workspace/wise-bench.sh
+# Under /workspace, run this command
+# Provide executable rights
+chmod +x wise-bench.sh
+
+# To run Wise-bench
+./wise-bench.sh
 ```
 ![langchain-wise-bench.png](data%2Fimages%2Flangchain-wise-bench.png)
 
