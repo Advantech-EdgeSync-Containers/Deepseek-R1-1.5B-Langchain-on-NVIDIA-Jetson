@@ -151,8 +151,6 @@ The following software components are available in the base image:
 | PyTorch      | 2.0.0+nv23.02  | Deep learning framework            |
 | TensorFlow   | 2.12.0         | Machine learning framework         |
 | ONNX Runtime | 1.16.3         | Cross-platform inference engine    |
-| VPI          | 3.2.4          | Vision Programming Interface       |
-| Vulkan       | 1.3.204        | Graphics and compute API           |
 | OpenCV       | 4.8.0          | Computer vision library with CUDA® |
 | GStreamer    | 1.16.2         | Multimedia framework               |
 
@@ -230,7 +228,7 @@ Allow some time for containers to become healthy.
 ### UI Access
 Access OpenWebUI via any browser using the URL given below. Create an account and perform a login:
 ```
-http://localhost_or_Jetson_IP:3000
+http://localhost:3000
 ```
 ### Select Model
 In case Ollama has multiple models available, choose from the list of models on the top-left of OpenWebUI after signing up/logging in successfully. As shown below. Select DeepSeek R1 1.5B:
