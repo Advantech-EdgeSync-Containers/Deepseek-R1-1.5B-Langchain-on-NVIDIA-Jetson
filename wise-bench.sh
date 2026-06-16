@@ -580,13 +580,13 @@ LANGCHAIN_STATUS=0
 FAISS_STATUS=0
 
 # ---- Check if Ollama is running ----
-if curl --silent --fail "$OLLAMA_API_BASE/api/tags" > /dev/null; then
+if curl --silent --fail "$OPENAI_API_OLLAMA_BASE/api/tags" > /dev/null; then
     print_table_row "Ollama Server Status" "✓ Running"
     OLLAMA_STATUS=1
     MAX=$((MAX + 2))
 
     # Run basic inference
-    RESPONSE=$(curl -s -X POST "$OLLAMA_API_BASE/api/generate" \
+    RESPONSE=$(curl -s -X POST "$OPENAI_API_OLLAMA_BASE/api/generate" \
     -H "Content-Type: application/json" \
     -d "{
           \"model\": \"$MODEL_NAME\",
